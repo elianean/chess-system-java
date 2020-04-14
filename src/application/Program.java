@@ -14,8 +14,9 @@ public class Program {
 
 		Scanner sc = new Scanner (System.in);
 		ChessMatch chessMatch = new ChessMatch();
+		String continua = "s";
 		
-		while (true) {
+		while (continua == "s") {
 			try {
 				UI.clearScreen();
 				UI.printBoard(chessMatch.getPieces());
@@ -31,11 +32,11 @@ public class Program {
 			}
 			catch (ChessException e) {
 				System.out.println(e.getMessage());
-				sc.nextLine();
+				continua = sc.nextLine();
 			}
 			catch (InputMismatchException e) {
 				System.out.println(e.getMessage());
-				sc.nextLine();
+				continua = sc.nextLine();
 			}
 		}
 	}
